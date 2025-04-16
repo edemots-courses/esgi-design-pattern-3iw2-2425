@@ -11,5 +11,5 @@ abstract class DataRenderer
         $this->formatter = $formatter;
     }
 
-    abstract public function render(array $data): string;
+    abstract public function render(Entity $entity): string;
 }
