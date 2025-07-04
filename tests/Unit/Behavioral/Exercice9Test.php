@@ -15,11 +15,11 @@ class Exercice9Test extends TestCase
 
         $observer1->expects($this->once())
                   ->method('update')
-                  ->with($this->equalTo(150.25));
+                  ->with(150.25);
 
         $observer2->expects($this->once())
                   ->method('update')
-                  ->with($this->equalTo(150.25));
+                  ->with(150.25);
 
         $stockMarket->attach($observer1);
         $stockMarket->attach($observer2);
@@ -51,11 +51,11 @@ class Exercice9Test extends TestCase
 
         $observer1->expects($this->once())
                   ->method('update')
-                  ->with($this->equalTo(300.75));
+                  ->with(300.75);
 
         $observer2->expects($this->once())
                   ->method('update')
-                  ->with($this->equalTo(300.75));
+                  ->with(300.75);
 
         $stockMarket->attach($observer1);
         $stockMarket->attach($observer2);
@@ -66,7 +66,7 @@ class Exercice9Test extends TestCase
 
         $observer2->expects($this->once())
                   ->method('update')
-                  ->with($this->equalTo(450.50));
+                  ->with(450.50)->after('observer2');
 
         $stockMarket->setStockPrice(450.50);
     }
